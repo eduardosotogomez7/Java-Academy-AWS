@@ -1,1 +1,237 @@
-<p>Hola desde github</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Profesional</title>
+    <style>
+        /* Variables de color para un look formal */
+        :root {
+            --bg-dark: #0f172a;        /* Azul noche profundo */
+            --bg-card: #1e293b;        /* Gris azulado para tarjetas */
+            --accent: #3b82f6;         /* Azul profesional para detalles */
+            --text-main: #f8fafc;      /* Blanco suave */
+            --text-muted: #94a3b8;     /* Gris para descripciones */
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section (Donde iría la foto) */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-content .highlight { color: var(--accent); }
+
+        .placeholder-img {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #1e293b, #334155);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Forma orgánica similar a la imagen */
+            border: 2px solid var(--accent);
+        }
+
+        /* Botones */
+        .btn {
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-outline { border: 1px solid var(--text-muted); color: var(--text-main); }
+
+        /* Grid de Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-bottom: 10px; color: var(--accent); }
+        .card p { color: var(--text-muted); font-size: 0.9rem; }
+
+        h2 { text-align: center; font-size: 2rem; }
+
+        /* Sección About Me */
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 80px;
+            padding: 40px 0;
+        }
+
+        /* Mosaico de la izquierda */
+        .about-visual {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            position: relative;
+        }
+
+        /* Estilo base de las cajas (ajustado) */
+        .visual-box {
+            aspect-ratio: 1 / 1;
+            background: var(--bg-card);
+            border-radius: 15px;
+            border: 1px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--text-muted); /* Color de texto inicial gris */
+            text-align: center;
+            padding: 10px;
+            cursor: pointer; /* Cambia el cursor a una manito */
+            transition: all 0.4s ease; /* Hace que el cambio sea suave */
+        }
+
+
+        .visual-box:hover {
+            background-color: var(--accent); 
+            color: white;                   /* El texto cambia a blanco */
+            transform: scale(1.05);         /* Crece un poquito (opcional) */
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); /* Brillo azul sutil */
+        }
+
+        
+
+        /* Contenido de la derecha */
+        .about-content { flex: 1; }
+
+        .about-content h2 { text-align: left; margin-bottom: 10px; }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-item h4 {
+            margin: 0;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 5px 0 0 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1><span class="highlight">Eduardo Soto Gómez</span> </h1>
+                <p style="color: var(--text-muted); font-size: 1.2rem;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <div style="margin-top: 30px;">
+                    <!--<a href="#" class="btn btn-primary">Contáctame</a>
+                    <a href="#" class="btn btn-outline">Descargar CV</a>-->
+                </div>
+            </div>
+            <!--<div class="placeholder-img"></div>-->
+        </section>
+
+        <section>
+            <h2>Mis <span class="highlight">Trabajos</span></h2>
+            <div class="services-grid">
+                <div class="card">
+                    <h3>Trabajo 1</h3>
+                    <p>Construcción de aplicaciones.</p>
+                </div>
+                <div class="card">
+                    <h3>Trabajo 2</h3>
+                    <p>Manejo de Bases de datos.</p>
+                </div>
+                <div class="card">
+                    <h3>Trabajo 3</h3>
+                    <p>Limpieza de datos con python.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-visual">
+    <div class="visual-box">Backend Architecture</div>
+    <div class="visual-box">Cloud Systems</div> <div class="visual-box">Clean Code</div>
+    <div class="visual-box">API Design</div>
+    
+</div>
+
+            <div class="about-content">
+                <h2>Proyecto  <span class="highlight">Final</span></h2>
+                <p style="color: var(--text-muted);">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4><span>◈</span> Frontend</h4>
+                        <p>HTML, CSS, JavaScript, React.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4><span>◈</span> Backend</h4>
+                        <p>Java, Spring Boot, Python, SQL.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4><span>◈</span> Cloud</h4>
+                        <p>AWS (EC2), Docker, Linux.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4><span>◈</span> Herramientas</h4>
+                        <p>Git, Maven, Jupyter, WSL.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <a href="#" class="btn btn-primary">Ver Proyecto Final</a>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
