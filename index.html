@@ -7,183 +7,441 @@
     <style>
         /* Variables de color para un look formal */
         :root {
-            --bg-dark: #0f172a;        /* Azul noche profundo */
-            --bg-card: #1e293b;        /* Gris azulado para tarjetas */
-            --accent: #3b82f6;         /* Azul profesional para detalles */
-            --text-main: #f8fafc;      /* Blanco suave */
-            --text-muted: #94a3b8;     /* Gris para descripciones */
-        }
+    --bg-dark: #0f172a;
+    --bg-card: rgba(30, 41, 59, 0.6);
+    --accent: #3b82f6;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-        }
+body {
+    background: radial-gradient(circle at top, #1e293b, #0f172a);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+/* CONTENEDOR */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
-        /* Hero Section (Donde iría la foto) */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px 0;
-        }
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0;
+}
 
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
+.hero-content h1 {
+    font-size: 3.2rem;
+}
 
-        .hero-content .highlight { color: var(--accent); }
+.highlight {
+    color: var(--accent);
+}
 
-        .placeholder-img {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(45deg, #1e293b, #334155);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Forma orgánica similar a la imagen */
-            border: 2px solid var(--accent);
-        }
+/* BOTONES */
+.btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-        /* Botones */
-        .btn {
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-right: 10px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-primary { background: var(--accent); color: white; }
-        .btn-outline { border: 1px solid var(--text-muted); color: var(--text-main); }
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
 
-        /* Grid de Servicios */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.03);
+}
 
-        .card {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-            transition: transform 0.3s;
-        }
+.btn-outline {
+    border: 1px solid var(--text-muted);
+    color: var(--text-main);
+}
 
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { margin-bottom: 10px; color: var(--accent); }
-        .card p { color: var(--text-muted); font-size: 0.9rem; }
+/* GRID */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
 
-        h2 { text-align: center; font-size: 2rem; }
-
-        /* Sección About Me */
-        .about-section {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-top: 80px;
-            padding: 40px 0;
-        }
-
-        /* Mosaico de la izquierda */
-        .about-visual {
-            flex: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            position: relative;
-        }
-
-        /* Estilo base de las cajas (ajustado) */
-       .visual-box {
-    aspect-ratio: 1 / 1;
+/* CARDS 🔥 */
+.card {
     background: var(--bg-card);
+    padding: 30px;
     border-radius: 15px;
-    border: 1px solid var(--accent);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(59,130,246,0.2), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+    color: var(--accent);
+}
+
+.card p {
+    color: var(--text-muted);
+}
+
+/* TITULOS */
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 80px;
+}
+
+/* ABOUT */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 80px;
+    padding: 40px 0;
+}
+
+/* MOSAICO */
+.about-visual {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* 🔥 CAJAS PRO */
+.visual-box {
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    border: 1px solid rgba(59,130,246,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
     text-align: center;
     padding: 10px;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.5s ease;
 
-    position: relative;   /* 
-    overflow: hidden;     /*
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    background: rgba(30, 41, 59, 0.4);
 }
 
-/* capa de imagen */
+/* IMAGEN */
 .bg-img {
     position: absolute;
-    inset: 0; /* top:0 left:0 right:0 bottom:0 */
+    inset: 0;
     background-size: cover;
     background-position: center;
-    opacity: 0; /* oculta al inicio */
-    transition: opacity 0.4s ease;
+
+    opacity: 0;
+
+    transform: scale(1.3) translateY(-10%); /* empieza arriba */
+    transition: transform 1s ease, opacity 0.5s ease;
 }
 
-/* hover */
+/* OVERLAY OSCURO 🔥 */
+.visual-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* TEXTO */
+.visual-box span {
+    position: relative;
+    z-index: 2;
+    transition: 0.4s;
+}
+
+/* HOVER 🔥🔥 */
 .visual-box:hover {
-    background-color: var(--accent);
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    transform: scale(1.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
-
 
 .visual-box:hover .bg-img {
     opacity: 1;
+    transform: scale(1);
+    background-position: center bottom; /* 🔥 se mueve hacia abajo */
 }
 
-/* opcional: ocultar texto cuando aparece imagen */
-.visual-box:hover {
-    color: transparent;
+.visual-box:hover::after {
+    opacity: 1;
 }
 
-        
+.visual-box:hover span {
+    color: white;
+    transform: translateY(-5px);
+}
 
-        /* Contenido de la derecha */
-        .about-content { flex: 1; }
+/* ABOUT TEXT */
+.about-content {
+    flex: 1;
+}
 
-        .about-content h2 { text-align: left; margin-bottom: 10px; }
+.about-content h2 {
+    text-align: left;
+}
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
+/* SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
 
-        .skill-item h4 {
-            margin: 0;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.skill-item h4 {
+    color: var(--accent);
+}
 
-        .skill-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 5px 0 0 0;
-        }
+.skill-item p {
+    color: var(--text-muted);
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.7);
+    border-bottom: 1px solid rgba(148,163,184,0.2);
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--accent);
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* SECCIÓN GENERAL */
+.project-section {
+    margin-top: 120px;
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* HERO */
+.project-hero {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.project-hero h2 {
+    font-size: 2.8rem;
+}
+
+.project-hero p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: auto;
+}
+
+/* BLOQUE GRANDE */
+.project-block {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.project-block h3 {
+    margin-bottom: 30px;
+    color: var(--accent);
+}
+
+/* IMAGEN GRANDE 🔥 */
+.project-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.project-image img {
+    width: 100%;
+    transition: transform 0.8s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.05);
+}
+
+/* GRID FEATURES */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* TARJETAS 🔥 */
+.feature-card {
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 15px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(148,163,184,0.2);
+    transition: 0.4s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* IMAGENES */
+.feature-img {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.feature-img img {
+    width: 100%;
+    transition: transform 0.6s ease;
+}
+
+.feature-card:hover img {
+    transform: scale(1.1);
+}
+
+/* TEXTO */
+.feature-card h4 {
+    text-align: center;
+    color: var(--text-main);
+}
+
+/* EFECTO GLOW GLOBAL 🔥 */
+.project-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59,130,246,0.3), transparent);
+    transform: translateX(-50%);
+    filter: blur(100px);
+    z-index: -1;
+}
+
+/* OCULTO */
+.hidden {
+    display: none;
+}
+
+/* SECCIÓN ACTIVA 🔥 */
+.project-section {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to bottom, #0f172a, #020617);
+    z-index: 200;
+
+    overflow-y: auto;
+    padding: 80px 20px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(40px);
+    transition: all 0.5s ease;
+}
+
+/* CUANDO SE MUESTRA */
+.project-section.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+    color: var(--accent);
+}
 
     </style>
 </head>
 <body>
-
+<header class="navbar">
+    <div class="nav-container">
+        <h3 class="logo"></h3>
+        <nav>
+            <a href="#certificaciones">Certificaciones</a>
+            <a href="#trabajos">Trabajos</a>
+            <a href="#actividades">Actividades</a>
+            <a href="#proyecto">Proyecto Final</a>
+        </nav>
+    </div>
+</header>
     <div class="container">
         <section class="hero">
             <div class="hero-content">
@@ -197,8 +455,8 @@
             <!--<div class="placeholder-img"></div>-->
         </section>
 
-        <section>
-            <h2> <span class="highlight">Certificaciones AWS</span></h2>
+        <section id="certificaciones">
+            <h2>Certificaciones <span class="highlight"> AWS</span></h2>
             <div class="services-grid">
                 <a href="images/Getting into de serverless mindset_Certification.png" style="text-decoration:none;">
                     <div class="card">
@@ -221,7 +479,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="trabajos">
             <h2>Mis <span class="highlight">Trabajos</span></h2>
             <div class="services-grid">
                 <a href="Tarea_1.html" style="text-decoration:none;">
@@ -257,7 +515,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="actividades">
             <h2>Actividades en <span class="highlight">Clase</span></h2>
             <div class="services-grid">
                 <a href="ActividadEnClase1.html" style="text-decoration:none;">
@@ -281,7 +539,7 @@
             </div>
         </section>
 
-        <section class="about-section">
+        <section class="about-section" id="proyecto">
             <div class="about-visual">
     <div class="visual-box">
     Diseño Minimalista
@@ -328,12 +586,72 @@
                 </div>
 
                 <div style="margin-top: 30px;">
-                    <a href="#" class="btn btn-primary">Ver Proyecto Final</a>
+                    <a href="proyecto.html" class="btn btn-primary">Ver Proyecto Final</a>
                     
                 </div>
             </div>
         </section>
     </div>
 
+    <section id="detalle-proyecto" class="project-section", class="project-section hidden">
+     <button class="close-btn" onclick="cerrarProyecto()">✕</button>   
+
+
+    <!-- HERO DEL PROYECTO -->
+    <div class="project-hero">
+        <h2>Pipeline de Datos en la <span class="highlight">Nube</span></h2>
+        <p>
+            Arquitectura completa para procesamiento de datos de taxis en NYC utilizando AWS, Spark y visualización interactiva.
+        </p>
+    </div>
+
+    <!-- ESTRUCTURA -->
+    <div class="project-block">
+        <h3>Estructura del Proyecto</h3>
+        <div class="project-image big">
+            <img src="images/EstructuraProyecto.png" alt="">
+        </div>
+        <p>
+            El sistema está diseñado como un pipeline distribuido que permite la ingesta, transformación y consulta eficiente de grandes volúmenes de datos.
+        </p>
+    </div>
+
+    <!-- GRID DE FEATURES -->
+    <div class="project-grid">
+
+        <div class="feature-card">
+            <div class="feature-img">
+                <img src="images/EstadísticasALInstante.png" alt="">
+            </div>
+            <h4>Estadísticas relevantes</h4>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-img">
+                <img src="images/ProcesosAutomaticos.png" alt="">
+            </div>
+            <h4>Procesamientos automáticos</h4>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-img">
+                <img src="images/DetallesDeProcesamiento.png" alt="">
+            </div>
+            <h4>Detalles del procesamiento</h4>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+function abrirProyecto() {
+    document.getElementById("detalle-proyecto").classList.add("active");
+}
+
+function cerrarProyecto() {
+    document.getElementById("detalle-proyecto").classList.remove("active");
+}
+</script>
 </body>
 </html>
