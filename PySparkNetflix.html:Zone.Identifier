@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=http://52.53.240.255:8888/notebooks/PySparkNetflix.ipynb
+HostUrl=http://52.53.240.255:8888/nbconvert/html/PySparkNetflix.ipynb?download=true

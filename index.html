@@ -105,29 +105,52 @@
         }
 
         /* Estilo base de las cajas (ajustado) */
-        .visual-box {
-            aspect-ratio: 1 / 1;
-            background: var(--bg-card);
-            border-radius: 15px;
-            border: 1px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: var(--text-muted); /* Color de texto inicial gris */
-            text-align: center;
-            padding: 10px;
-            cursor: pointer; /* Cambia el cursor a una manito */
-            transition: all 0.4s ease; /* Hace que el cambio sea suave */
-        }
+       .visual-box {
+    aspect-ratio: 1 / 1;
+    background: var(--bg-card);
+    border-radius: 15px;
+    border: 1px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    position: relative;   /* 
+    overflow: hidden;     /*
+}
+
+/* capa de imagen */
+.bg-img {
+    position: absolute;
+    inset: 0; /* top:0 left:0 right:0 bottom:0 */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* oculta al inicio */
+    transition: opacity 0.4s ease;
+}
+
+/* hover */
+.visual-box:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
 
 
-        .visual-box:hover {
-            background-color: var(--accent); 
-            color: white;                   /* El texto cambia a blanco */
-            transform: scale(1.05);         /* Crece un poquito (opcional) */
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); /* Brillo azul sutil */
-        }
+.visual-box:hover .bg-img {
+    opacity: 1;
+}
+
+/* opcional: ocultar texto cuando aparece imagen */
+.visual-box:hover {
+    color: transparent;
+}
 
         
 
@@ -183,16 +206,16 @@
                         <p></p>
                     </div>
                 </a>
-                <a href="Tarea2.html" style="text-decoration:none;">
+                <a href="images/AWS-Well-Architecter-Foundations-Certificate.png" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Trabajo 2</h3>
-                        <p>Metricas de ventas.</p>
+                        <h3>Well Architecter Foundations</h3>
+                        <p></p>
                     </div>
                 </a>
-                <a href="Tarea3.html" style="text-decoration:none;">
+                <a href="images/Data Engineering on AWS-Foundations-Certificate.png" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Trabajo 3</h3>
-                        <p>DataFrame Titanic.</p>
+                        <h3>Data Engineering on AWS-Foundations</h3>
+                        <p></p>
                     </div>
                 </a>
             </div>
@@ -203,32 +226,32 @@
             <div class="services-grid">
                 <a href="Tarea_1.html" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Trabajo 1</h3>
-                        <p>Construcción de aplicaciones.</p>
+                        <h3>Tarea 1: Python 1</h3>
+                        <p></p>
                     </div>
                 </a>
                 <a href="Tarea2.html" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Trabajo 2</h3>
-                        <p>Metricas de ventas.</p>
+                        <h3>Tarea 2: DataFrame</h3>
+                        <p></p>
                     </div>
                 </a>
                 <a href="Tarea3.html" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Trabajo 3</h3>
-                        <p>DataFrame Titanic.</p>
+                        <h3>Tarea 3: Titanic</h3>
+                        <p></p>
                     </div>
                 </a>
                 <a href="images/CodeCombat.png" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Trabajo 4</h3>
-                        <p>Code Combat</p>
+                        <h3>Tarea 4: CodeCombat</h3>
+                        <p></p>
                     </div>
                 </a>
                 <a href="images/StreamlitApp.png" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Trabajo 5</h3>
-                        <p>Aplicacion Streamlit</p>
+                        <h3>Tarea 5: My StreamLit</h3>
+                        <p></p>
                     </div>
                 </a>
             </div>
@@ -239,20 +262,20 @@
             <div class="services-grid">
                 <a href="ActividadEnClase1.html" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Actividad en clase 1</h3>
-                        <p>Tabla pivote.</p>
+                        <h3>Ejercicio Clase 1: DataFrame Grupo</h3>
+                        <p></p>
                     </div>
                 </a>
-                <a href="Tarea.html" style="text-decoration:none;">
+                <a href="PySparkNetflix.html" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Trabajo 2</h3>
-                        <p>.........</p>
+                        <h3>Ejercicio clase 3: PySpark Netflix</h3>
+                        <p></p>
                     </div>
                 </a>
-                <a href="Tarea.html" style="text-decoration:none;">
+                <a href="ClaseSQL.html" style="text-decoration:none;">
                     <div class="card">
-                        <h3>Trabajo 3</h3>
-                        <p>......</p>
+                        <h3>Ejercicio Clase 4: SQL</h3>
+                        <p></p>
                     </div>
                 </a>
             </div>
@@ -260,34 +283,47 @@
 
         <section class="about-section">
             <div class="about-visual">
-    <div class="visual-box">Backend Architecture</div>
-    <div class="visual-box">Cloud Systems</div> <div class="visual-box">Clean Code</div>
-    <div class="visual-box">API Design</div>
+    <div class="visual-box">
+    Diseño Minimalista
+    <div class="bg-img" style="background-image: url('images/DiseñoMinimalista.png');"></div>
+    </div>
+    <div class="visual-box">
+    Estadísticas relevantes
+    <div class="bg-img" style="background-image: url('images/EstadísticasALInstante.png');"></div>
+</div>
+<div class="visual-box">
+    Procesamientos Automáticos
+    <div class="bg-img" style="background-image: url('images/ProcesosAutomaticos.png');"></div>
+</div>
+<div class="visual-box">
+    Detalles de procesos
+    <div class="bg-img" style="background-image: url('images/DetallesDeProcesamiento.png');"></div>
+</div>
     
 </div>
 
             <div class="about-content">
                 <h2>Proyecto  <span class="highlight">Final</span></h2>
                 <p style="color: var(--text-muted);">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    "Pipeline de datos en la nube para el procesamiento y análisis de viajes de taxis de NYC. El sistema ingiere archivos Parquet desde un bucket en S3, los procesa con Spark para limpieza y generación de métricas, y almacena los resultados de forma particionada. Incluye una aplicación en Streamlit que permite consultar dinámicamente estadísticas por año, mes y tipo de taxi, activando el procesamiento automáticamente si los datos aún no han sido generados."
                 </p>
 
                 <div class="skills-grid">
                     <div class="skill-item">
                         <h4><span>◈</span> Frontend</h4>
-                        <p>HTML, CSS, JavaScript, React.</p>
+                        <p>Streamlit</p>
                     </div>
                     <div class="skill-item">
                         <h4><span>◈</span> Backend</h4>
-                        <p>Java, Spring Boot, Python, SQL.</p>
+                        <p>Java, Python.</p>
                     </div>
                     <div class="skill-item">
                         <h4><span>◈</span> Cloud</h4>
-                        <p>AWS (EC2), Docker, Linux.</p>
+                        <p>AWS (EC2, S3, Lambda), Docker, Linux</p>
                     </div>
                     <div class="skill-item">
                         <h4><span>◈</span> Herramientas</h4>
-                        <p>Git, Maven, Jupyter, WSL.</p>
+                        <p>Git, Jupyter, WSL, PySpark.</p>
                     </div>
                 </div>
 
